@@ -3,7 +3,7 @@ import React from 'react'
 
 function Dashboardbar({ firsttxt, secondtxt, btntxt }) {
   return (
-    <div className='flex justify-between px-16 py-3' style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}>
+    <div className='flex justify-between px-16 py-10' style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}>
       <div className='flex flex-col justify-between items-start'>
         <p className='text-[12px] font-normal '>{firsttxt}</p>
         <h2 className='text-[26px] font-bold'>{secondtxt}</h2>
