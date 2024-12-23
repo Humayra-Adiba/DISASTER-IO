@@ -1,5 +1,6 @@
 import React from 'react'
 import Dashboardbar from '../Common/Dashboardbar'
+import Chatbox from './Chatbox'
 
 const info = [
     {
@@ -54,6 +55,7 @@ function Dashboard() {
 
       ))}
       </div>
+      <Chatbox/>
     </>
   )
 }

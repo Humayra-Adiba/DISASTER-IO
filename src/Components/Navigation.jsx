@@ -87,10 +87,10 @@ export default function Navigation() {
         ))}
       </NavbarContent>
       <NavbarContent justify="end">
-        <div className="flex flex-row gap-6">
+        <div className="flex flex-row lg:gap-6 md:gap-4 gap-1">
           <img src="notification.svg" alt="" />
           <img src="manicon.svg" alt="" />
-          <div>
+          <div className="lg:block hidden">
             <span className="text-[16px] text-[#A1A1AA]">Usman Zafar</span>
             <br />
             <p className="text-[14px] text-[#A1A1AA]">usmanzafar@gmail.com</p>
