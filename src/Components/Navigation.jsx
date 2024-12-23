@@ -83,8 +83,8 @@ export default function Navigation() {
       </NavbarContent>
       <NavbarContent justify="end">
         <div className="flex flex-row lg:gap-6 md:gap-4 gap-1">
-          <img src="notification.svg" alt="" />
-          <img src="manicon.svg" alt="" />
+          <img src="/notification.svg" alt="" />
+          <img src="/manicon.svg" alt="" />
           <div className="lg:block hidden">
             <span className="text-[16px] text-[#A1A1AA]">Usman Zafar</span>
             <br />
