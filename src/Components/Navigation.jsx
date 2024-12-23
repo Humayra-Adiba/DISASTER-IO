@@ -9,7 +9,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 
 export const DisasterLogo = () => {
@@ -98,7 +97,23 @@ export default function Navigation() {
           </div>
         </div>
       </NavbarContent>
-     
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              className="w-full"
+              color={
+                activeItem === item ? "primary" : "foreground"
+              }
+              href="#"
+              size="lg"
+              onClick={() => handleItemClick(item)}
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </Navbar>
   );
 }
