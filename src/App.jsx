@@ -1,5 +1,6 @@
 
 import './App.css'
+import Dashboard from './Components/Dashboard'
 import Navigation from './Components/Navigation'
 
 function App() {
@@ -7,6 +8,8 @@ function App() {
   return (
     <>
     <Navigation/>
+    <Dashboard/>
+    
     </>
   )
 }

@@ -3,18 +3,18 @@ import React from 'react'
 
 function Dashboardbar({ firsttxt, secondtxt, btntxt }) {
   return (
-    <div className='flex justify-between px-4 py-3' style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}>
+    <div className='flex justify-between px-16 py-3' style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}>
       <div className='flex flex-col justify-between items-start'>
         <p className='text-[12px] font-normal '>{firsttxt}</p>
         <h2 className='text-[26px] font-bold'>{secondtxt}</h2>
       </div>
-      <div className='flex gap-2'>
-        <div className='flex flex-col '>
+      <div className='flex gap-2 py-2'>
+        <div className='flex flex-row p-3 gap-2 rounded-md bg-white '>
             <img src="/search.svg" alt="" />
-            <input type="text" placeholder='Search incident' />
+            <input type="text" placeholder='Search incident' className='border-none outline-none '/>
         </div>
-        <input type="text" placeholder='Sort by: Date modified' />
-        <Button variant='danger' className="rounded-md">{btntxt}</Button>
+        <input type="text" placeholder='Sort by: Date modified' className='rounded-md p-3 border-none outline-none'/>
+        <Button color='warning' className="rounded-md px-5 hover:scale-105" style={{height: "100%"}}>{btntxt}</Button>
       </div>
     </div>
   )
