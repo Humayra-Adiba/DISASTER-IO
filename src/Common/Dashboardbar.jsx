@@ -1,9 +1,14 @@
 import { Button } from '@nextui-org/react'
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
+
 
 
 function Dashboardbar({ firsttxt, secondtxt, btntxt }) {
-
+  const navigate = useNavigate()
+  const handleClick = () => {
+    btntxt === "+ New Incident" ? navigate("/Incidents/GetStarted") : navigate("/")
+  }
   return (
     <div className='flex lg:flex-row flex-col justify-between px-16 py-10' style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}>
       <div className='flex flex-col justify-between items-start'>
@@ -16,7 +21,7 @@ function Dashboardbar({ firsttxt, secondtxt, btntxt }) {
             <input type="text" placeholder='Search incident' className='border-none outline-none w-full'/>
         </div>
         <input type="text" placeholder='Sort by: Date modified' className='rounded-md p-3 border-none outline-none'/>
-        <Button color='warning' className="rounded-md px-5 hover:scale-105 md:py-3 py-3" style={{height: "100%"}}>{btntxt}</Button>
+        <Button color='warning' className="rounded-md px-5 hover:scale-105 md:py-3 py-3" onClick={handleClick} style={{height: "100%"}}>{btntxt}</Button>
       </div>
     </div>
   )
