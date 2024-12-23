@@ -2,3 +2,8 @@
   margin: 0;
   padding: 0;
 }
+.active{
+  border-bottom: 3px solid #000;
+  padding-bottom: 6px;
+  font-weight: 700;
+}

@@ -8,8 +8,8 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Link,
 } from "@nextui-org/react";
+import { Outlet, NavLink } from "react-router-dom";
 
 export const DisasterLogo = () => {
   return (
@@ -21,23 +21,21 @@ export const DisasterLogo = () => {
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState("Dashboard");
+
 
   const menuItems = [
-    "Dashboard",
-    "Incidents",
-    "Customers",
-    "Locations",
-    "Activities",
-    "Documents",
-    "Cypher AI",
+    {link: '/', txt: "Dashboard"},
+    {link: '/Incidents', txt: "Incidents"},
+    {link: "/Locations", txt:"Locations"},
+    {link: "/Activities", txt:"Activities"},
+    {link: "/Documents", txt:"Documents"},
+    {link: "/Cypher AI", txt:"Cypher AI"},
   ];
 
-  const handleItemClick = (item) => {
-    setActiveItem(item);
-  };
+  
 
   return (
+    <>
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
@@ -56,7 +54,7 @@ export default function Navigation() {
           "data-[active=true]:after:bg-primary",
         ],
       }}
-      className="border-b-3" style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}
+      className="border-b-3 py-0" style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -69,20 +67,17 @@ export default function Navigation() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {menuItems.map((item) => (
+        {menuItems.map((item, i) => (
           <NavbarItem
-            key={item}
-            isActive={activeItem === item}
+            key={i}
+            
             
           >
-            <Link
-              aria-current={activeItem === item ? "page" : undefined}
-              color={activeItem === item ? "primary" : "foreground"}
-              onClick={() => handleItemClick(item)}
-              href="#"
+            <NavLink
+              to={item.link}
             >
-              {item}
-            </Link>
+              {item.txt}
+            </NavLink>
           </NavbarItem>
         ))}
       </NavbarContent>
@@ -100,20 +95,21 @@ export default function Navigation() {
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                activeItem === item ? "primary" : "foreground"
+            <NavLink
+              className={({ isActive }) => (isActive ? "text-blue-500" : "text-black")}
+              
+              to={item.link
               }
-              href="#"
               size="lg"
-              onClick={() => handleItemClick(item)}
-            >
-              {item}
-            </Link>
+            >  
+              {item.txt}
+            </NavLink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
     </Navbar>
+    <Outlet/>
+    </>
+    
   );
 }

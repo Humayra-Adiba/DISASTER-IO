@@ -1,7 +1,9 @@
 import { Button } from '@nextui-org/react'
 import React from 'react'
 
+
 function Dashboardbar({ firsttxt, secondtxt, btntxt }) {
+
   return (
     <div className='flex lg:flex-row flex-col justify-between px-16 py-10' style={{backgroundColor: 'rgba(228, 228, 231, 0.5)'}}>
       <div className='flex flex-col justify-between items-start'>
