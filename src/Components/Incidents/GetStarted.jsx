@@ -1,5 +1,6 @@
 import { Button } from '@nextui-org/react'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const cardinfo=[
     {
@@ -22,9 +23,14 @@ const cardinfo=[
 
 
 function GetStarted() {
+ const navigate = useNavigate()
+ function handleClick(){
+  navigate("/Incidents/GetStarted/Describe")
+ }
+
   return (
     <div className='mt-16 '>
-      <div className="flex flex-col justify-center items-center mt-3 gap-0 md:gap-3">
+      <div className="flex flex-col justify-center items-center mt-3 gap-1 md:gap-3">
         <h1 className="text-[32px] font-bold text-black">Let’s get started</h1>
         <h3 className="text-[16px] text-graybold">
           Lorem ipsum dolar sit general sac mascho werhoLorem ipsum <br /> dolar
@@ -40,9 +46,9 @@ function GetStarted() {
         <div className="lg:w-7 w-5 lg:h-7 h-5 rounded-full" style={{backgroundColor: "rgba(228, 228, 231, 1)"}}></div>
       </div>
 
-        <div className='flex justify-center items-center gap-10 mx-80 mt-10'>
+        <div className='flex justify-center flex-wrap items-center gap-10 mx-20 md:mx-80 mt-10  '>
             {cardinfo.map(({img, title, description}) => (
-                <div className='flex flex-col gap-16 p-5  rounded-xl flex-wrap' style={{backgroundColor: "rgba(244, 244, 245, 1)"}}>
+                <div className='flex flex-col gap-16 p-5  rounded-xl flex-wrap hover:scale-105 hover:duration-100 hover:shadow-xl' style={{backgroundColor: "rgba(244, 244, 245, 1)"}}>
                     <img src={img} className='w-[54px]'/>
                     <div className='flex flex-col gap-3'>
                     <h1 className='text-[20px] font-bold '>{title}</h1>
@@ -51,7 +57,7 @@ function GetStarted() {
                 </div>
             ))}
         </div>
-      <div className='text-center mt-10 mb-5'><Button className='py-5 px-8 text-white' style={{backgroundColor: "rgba(242, 105, 34, 1)"}}>Get Started</Button></div>
+      <div className='text-center mt-10 mb-5'><Button className='py-5 px-8 text-white' style={{backgroundColor: "rgba(242, 105, 34, 1)"}} onClick={handleClick}>Get Started</Button></div>
     </div>
   )
 }
