@@ -1,7 +1,12 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
-
+import ActivityCard from "../Common/ActivityCard";
+import {useNavigate} from 'react-router-dom'
 function Locationsbar() {
+  const navigate = useNavigate()
+  function handleClick(){
+    navigate("/Incidents")
+  }
   return (
     <div
       className="flex lg:flex-row flex-col justify-between px-16 py-10"
@@ -36,6 +41,7 @@ function Locationsbar() {
           color="warning"
           className="rounded-md px-5 hover:scale-105 md:py-3 py-3"
           style={{ height: "100%" }}
+          onClick={handleClick}
         >
           + New Location
         </Button>
@@ -110,13 +116,32 @@ function Locations() {
             className="w-full h-[2px] my-8"
             style={{ color: "rgba(228, 228, 231, 1)" }}
           />
-          <div className="flex justify-between"><p className="text-[14px] font-bold">Locations</p><p className="text-[#A1A1AA] underline cursor-pointer">See all</p></div>
+          <div className="flex justify-between mb-2"><p className="text-[14px] font-bold">Locations</p><p className="text-[#A1A1AA] underline cursor-pointer">See all</p></div>
           <div className="flex flex-wrap gap-6">
             <LocationCard img='/building.svg'/>
             <LocationCard img='/buidling2.svg'/>
             <LocationCard img='/building.svg'/>
             <LocationCard img='/building.svg'/>
           </div>
+          <hr
+            className="w-full h-[2px] my-8"
+            style={{ color: "rgba(228, 228, 231, 1)" }}
+          />
+          <div className="flex justify-between mb-2"><p className="text-[14px] font-bold">Activities</p><p className="text-[#0A0A0A] text-[14px] underline cursor-pointer">See all</p></div>
+          <div className="flex flex-col md:gap-4 gap-2">
+          <ActivityCard type="Activity"/>
+          <ActivityCard type="Activity"/>
+          </div>
+          <hr
+            className="w-full h-[2px] my-8"
+            style={{ color: "rgba(228, 228, 231, 1)" }}
+          />
+          <div className="flex justify-between mb-2"><p className="text-[14px] font-bold">Documents</p><p className="text-[#0A0A0A] text-[14px] underline cursor-pointer">See all</p></div>
+          <div className="flex flex-col md:gap-4 gap-2">
+          <ActivityCard type="Document"/>
+          <ActivityCard type="Document"/>
+          </div>
+
         </div>
         <div className="md:w-1/2">
           <img src="/Incident-Map.svg" className="w-full" alt="" />

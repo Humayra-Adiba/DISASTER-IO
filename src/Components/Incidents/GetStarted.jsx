@@ -46,9 +46,9 @@ function GetStarted() {
         <div className="lg:w-7 w-5 lg:h-7 h-5 rounded-full" style={{backgroundColor: "rgba(228, 228, 231, 1)"}}></div>
       </div>
 
-        <div className='flex justify-center flex-wrap items-center gap-10 mx-20 md:mx-80 mt-10  '>
+        <div className='flex justify-center lg:flex-nowrap flex-wrap items-stretch gap-10 mx-20 md:mx-60 mt-10  '>
             {cardinfo.map(({img, title, description}) => (
-                <div className='flex flex-col gap-16 p-5  rounded-xl flex-wrap hover:scale-105 hover:duration-100 hover:shadow-xl' style={{backgroundColor: "rgba(244, 244, 245, 1)"}}>
+                <div className='flex flex-col gap-12 p-5  rounded-xl flex-wrap hover:scale-105 hover:duration-100 hover:shadow-xl' style={{backgroundColor: "rgba(244, 244, 245, 1)"}}>
                     <img src={img} className='w-[54px]'/>
                     <div className='flex flex-col gap-3'>
                     <h1 className='text-[20px] font-bold '>{title}</h1>

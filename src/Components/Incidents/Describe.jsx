@@ -93,8 +93,8 @@ function Describe() {
           <h1 className='text-wrap md:text-nowrap w-full'>Which of these best describes the incident?</h1>
         </div>
         <div className='grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 grid-col-1 text-center gap-3 justify-center items-center'>
-          {description.map(({img,incident}) => (
-            <div className='inline-flex justify-start items-center gap-2 w-44 px-3 py-4 border border-gray-300 rounded-md hover:cursor-pointer hover:bg-orange-500 transition-all duration-300 group' style={{backgroundColor:"rgba(244, 244, 245, 1)"}}>
+          {description.map(({img,incident}, i) => (
+            <div className='inline-flex justify-start items-center gap-2 w-44 px-3 py-4 border border-gray-300 rounded-md hover:cursor-pointer hover:bg-orange-500 transition-all duration-300 group' style={{backgroundColor:"rgba(244, 244, 245, 1)"}} key={i}>
                 <img src={img}/>
                 <p className="text-14" style={{color:"rgba(113, 113, 122, 1)"}}>{incident}</p>
             </div>
