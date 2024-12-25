@@ -8,6 +8,7 @@ import GetStarted from './Components/Incidents/GetStarted';
 import Describe from './Components/Incidents/Describe';
 import IncidentTitle from './Components/Incidents/IncidentTitle';
 import MapIncident from './Components/Incidents/MapIncident';
+import Locations from './Components/Locations';
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/Incidents/GetStarted/Describe" element={<Describe/>}/>
           <Route path='/Incidents/GetStarted/Describe/IncidentTitle' element={<IncidentTitle/>}/>
           <Route path='/Incidents/GetStarted/Describe/IncidentTitle/MapIncident' element={<MapIncident/>} />
+          <Route path='/Locations' element={<Locations/>}/>
       </Routes>
     </BrowserRouter>
   )
